@@ -13,6 +13,12 @@ namespace SFF.Models
         {
             this.Title = Title;
             DurationInMinutes = Decimal.ToInt32(Duration);
+            // Standard value 10
+            numberOfMaxSimultaneouslyRented = 10;
+        }
+        public Movie(string Title, decimal Duration, int MaxSimultaneouslyRented) : this (Title, Duration)
+        {
+            numberOfMaxSimultaneouslyRented = MaxSimultaneouslyRented;
         }
 
 

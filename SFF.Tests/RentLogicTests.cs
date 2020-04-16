@@ -52,13 +52,13 @@ namespace SFF.Tests
             var movie = new Movie(title, duration);
 
             var numberOfTimesYouCanRent = 10;
-            var numberOfCurrentlyRented = 5;
             
             // Act
             movie.numberOfMaxSimultaneouslyRented = numberOfTimesYouCanRent;
 
             // Assert
-            Assert.Throws<Exception>(() => movie.numberOfCurrentlyRented = numberOfCurrentlyRented);
+            // Test if you can rent a movie over the set limit
+            Assert.Throws<Exception>(() => movie.RentMovie(numberOfTimesYouCanRent + 1));
 
         }
         [Fact]
