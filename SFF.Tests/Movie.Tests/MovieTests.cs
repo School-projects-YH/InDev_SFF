@@ -2,9 +2,8 @@
 using Xunit;
 using SFF.Models;
 using AutoFixture;
-using SFF.Controllers;
 
-namespace SFF.Tests
+namespace SFF.Tests.MovieTests
 {
     public class MovieTests
     {
@@ -19,8 +18,8 @@ namespace SFF.Tests
             // Act
             var movie = new Movie(expectedTitle, Duration);
             // Assert
-            Assert.Equal(expectedTitle, movie.Title);
-            Assert.Equal(expectedDuration, movie.Duration);
+            Assert.Equal(expectedTitle, movie.MovieProperty.Title);
+            Assert.Equal(expectedDuration, movie.MovieProperty.Duration);
         }
     }
 }

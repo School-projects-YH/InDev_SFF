@@ -47,7 +47,7 @@ namespace SFF.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMovie(long id, Movie movie)
         {
-            if (id != movie.Id)
+            if (id != movie.MovieProperty.Id)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace SFF.Controllers
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, movie);
+            return CreatedAtAction(nameof(GetMovie), new { id = movie.MovieProperty.Id }, movie);
         }
 
         // DELETE: api/Movies/5
@@ -103,7 +103,7 @@ namespace SFF.Controllers
 
         private bool MovieExists(long id)
         {
-            return _context.Movies.Any(e => e.Id == id);
+            return _context.Movies.Any(e => e.MovieProperty.Id == id);
         }
     }
 }
