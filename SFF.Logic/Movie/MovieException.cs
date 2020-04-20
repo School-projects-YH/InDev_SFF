@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SFF.Logic
+namespace SFF.Core
 {
     [Serializable]
     public class ExceedingMaxRentCapReachedException : Exception

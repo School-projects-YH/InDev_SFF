@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using SFF.Logic;
 using System.Globalization;
+using SFF.Core.Model;
 
-namespace SFF.Models
+namespace SFF.Core
 {
-    public class Movie
+    public class Movie : IEntity
     {
         public MovieProperty MovieProperty { get; set; }
         public Movie(string Title, decimal Duration)

@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using AutoFixture;
-using SFF.Logic.MovieTriviaNS;
-using SFF.Logic.MovieStudios;
-using SFF.Models;
-using SFF.Logic;
-
-
+using SFF.Core.MovieTriviaNS;
+using SFF.Core.MovieStudios;
+using SFF.Core;
 
 namespace SFF.Tests.MovieTriviaTests
 {

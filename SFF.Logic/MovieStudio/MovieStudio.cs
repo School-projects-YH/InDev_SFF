@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using SFF.Models;
+using SFF.Core.Model;
+using SFF.Core;
 
-namespace SFF.Logic.MovieStudios
+namespace SFF.Core.MovieStudios 
 {
-    public class MovieStudio
+    public class MovieStudio : IEntity
     {
         public string Name { get; set; }
         public string Adress { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System;
 using Xunit;
-using SFF.Models;
+using SFF.Core;
 using AutoFixture;
 
 namespace SFF.Tests.MovieTests

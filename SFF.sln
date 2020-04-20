@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFF", "SFF\SFF.csproj", "{24207034-5BDC-41CF-A9B2-F0D48162F293}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFF.Tests", "SFF.Tests\SFF.Tests.csproj", "{1EA4D7AE-BD8D-4AE1-9E5F-E0C1DD47E91E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFF.Logic", "SFF.Logic\SFF.Logic.csproj", "{FE3115A3-1749-4F47-BE4A-5A35156D8124}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFF.Core", "SFF.Logic\SFF.Core.csproj", "{FE3115A3-1749-4F47-BE4A-5A35156D8124}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{24207034-5BDC-41CF-A9B2-F0D48162F293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24207034-5BDC-41CF-A9B2-F0D48162F293}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24207034-5BDC-41CF-A9B2-F0D48162F293}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24207034-5BDC-41CF-A9B2-F0D48162F293}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EA4D7AE-BD8D-4AE1-9E5F-E0C1DD47E91E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1EA4D7AE-BD8D-4AE1-9E5F-E0C1DD47E91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EA4D7AE-BD8D-4AE1-9E5F-E0C1DD47E91E}.Release|Any CPU.ActiveCfg = Release|Any CPU

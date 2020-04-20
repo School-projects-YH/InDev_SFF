@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using AutoFixture;
-using SFF.Models;
-using SFF.Logic;
+using SFF.Core;
 
 namespace SFF.Tests.MovieTests
 {

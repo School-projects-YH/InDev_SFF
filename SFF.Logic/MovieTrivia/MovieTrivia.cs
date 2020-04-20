@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SFF.Logic.MovieStudios;
-using SFF.Models;
+using SFF.Core.MovieStudios;
+using SFF.Core;
 
 
-namespace SFF.Logic.MovieTriviaNS
+namespace SFF.Core.MovieTriviaNS
 {
     public class MovieTrivia
     {

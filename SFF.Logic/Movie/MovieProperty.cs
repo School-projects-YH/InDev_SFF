@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
-using SFF.Models;
+using SFF.Core;
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
 
-namespace SFF.Logic
+namespace SFF.Core
 {
     public class MovieProperty
     {

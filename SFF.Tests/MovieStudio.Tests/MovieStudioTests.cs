@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xunit;
-using SFF.Logic.MovieStudios;
+using SFF.Core.MovieStudios;
 using AutoFixture;
+using SFF.Core.Model;
+using SFF.Core.Context;
+using Moq;
+
 
 namespace SFF.Tests.MovieStudioTests
 {
@@ -45,11 +49,15 @@ namespace SFF.Tests.MovieStudioTests
         public void Remove_a_movie_studio()
         {
             // Arrange
-#warning not implemented
+            var fixture = new Fixture();
+            
+            var mockMovieStudioRepository = new Mock<IRepository<MovieStudio>>();
+            var expectedMovieStudio = fixture.Create<MovieStudio>();
             // Act
+            mockMovieStudioRepository.Object.Delete(expectedMovieStudio);
 
             // Assert
-            Assert.Equal("1", "2");
+            mockMovieStudioRepository.Verify((m => m.Delete(expectedMovieStudio)), Times.Once);
         }
 
         [Fact]
