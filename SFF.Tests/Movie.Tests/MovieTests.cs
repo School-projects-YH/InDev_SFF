@@ -2,6 +2,7 @@
 using Xunit;
 using SFF.Core;
 using AutoFixture;
+using SFF.Datasource.Model;
 
 namespace SFF.Tests.MovieTests
 {
@@ -12,14 +13,13 @@ namespace SFF.Tests.MovieTests
         {
             // Arrange
             var expectedTitle = "TestTitle";
-            var Duration = 60m;
-            var expectedDuration = "1:00";
+            var expectedDuration = 60;
 
             // Act
-            var movie = new Movie(expectedTitle, Duration);
+            var movie = new Movie(expectedTitle, expectedDuration);
             // Assert
-            Assert.Equal(expectedTitle, movie.MovieProperty.Title);
-            Assert.Equal(expectedDuration, movie.MovieProperty.Duration);
+            Assert.Equal(expectedTitle, movie.Title);
+            Assert.Equal(expectedDuration, movie.Duration);
         }
     }
 }

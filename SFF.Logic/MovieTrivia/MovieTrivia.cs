@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SFF.Core.MovieStudios;
-using SFF.Core;
+using SFF.Datasource.Model;
 
 
 namespace SFF.Core.MovieTriviaNS

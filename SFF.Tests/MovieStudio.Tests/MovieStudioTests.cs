@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xunit;
-using SFF.Core.MovieStudios;
 using AutoFixture;
-using SFF.Datasource.Context;
+using SFF.Datasource.Model;
 using Moq;
 using SFF.Datasource.Repository;
 

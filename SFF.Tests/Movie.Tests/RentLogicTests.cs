@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using AutoFixture;
-using SFF.Core;
+using SFF.Datasource.Model;
 
 namespace SFF.Tests.MovieTests
 {
@@ -16,14 +16,14 @@ namespace SFF.Tests.MovieTests
             // Arrange
             var fixture = new Fixture();
             var title = fixture.Create<string>();
-            var duration = fixture.Create<decimal>();
+            var duration = fixture.Create<int>();
 
             var movie = new Movie(title, duration);
 
             // Act
 
             // Assert
-            Assert.True(movie.MovieProperty.NumberOfMaxSimultaneouslyRented > 0);
+            Assert.True(movie.NumberOfMaxSimultaneouslyRented > 0);
         }
         [Fact]
         public void Can_you_change_the_number_of_times_a_movie_can_be_rented()
@@ -31,16 +31,16 @@ namespace SFF.Tests.MovieTests
             // Arrange
             var fixture = new Fixture();
             var title = fixture.Create<string>();
-            var duration = fixture.Create<decimal>();
+            var duration = fixture.Create<int>();
             var movie = new Movie(title, duration);
 
             var exectedNumberOfTimesYouCanRent = 10;
 
             // Act
-            movie.MovieProperty.NumberOfMaxSimultaneouslyRented = exectedNumberOfTimesYouCanRent;
+            movie.NumberOfMaxSimultaneouslyRented = exectedNumberOfTimesYouCanRent;
 
             // Assert
-            Assert.Equal(movie.MovieProperty.NumberOfMaxSimultaneouslyRented, exectedNumberOfTimesYouCanRent);
+            Assert.Equal(movie.NumberOfMaxSimultaneouslyRented, exectedNumberOfTimesYouCanRent);
         }
         [Fact]
         public void Is_it_possible_to_rent_more_than_allowed()
@@ -48,13 +48,13 @@ namespace SFF.Tests.MovieTests
             // Arrange
             var fixture = new Fixture();
             var title = fixture.Create<string>();
-            var duration = fixture.Create<decimal>();
+            var duration = fixture.Create<int>();
             var movie = new Movie(title, duration);
 
             var numberOfTimesYouCanRent = 10;
             
             // Act
-            movie.MovieProperty.NumberOfMaxSimultaneouslyRented = numberOfTimesYouCanRent;
+            movie.NumberOfMaxSimultaneouslyRented = numberOfTimesYouCanRent;
 
             // Assert
             // Test if you can rent a movie over the set limit
@@ -67,13 +67,13 @@ namespace SFF.Tests.MovieTests
             // Arrange
             var fixture = new Fixture();
             var title = fixture.Create<string>();
-            var duration = fixture.Create<decimal>();
+            var duration = fixture.Create<int>();
             var movie = new Movie(title, duration);
 
             // Act
-            movie.MovieProperty.IsRented = true;
+            movie.IsRented = true;
             // Assert
-            Assert.True(movie.MovieProperty.IsRented);
+            Assert.True(movie.IsRented);
         }
 
     }

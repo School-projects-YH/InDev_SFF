@@ -8,11 +8,11 @@ using SFF.Datasource.Context;
 
 namespace SFF.Datasource.Repository
 {
-    class MovieRepository : IRepository<Movie>
+    public class MoviePropertyRepository : IRepository<Movie>
     {
         private readonly SFFContext _context;
 
-        public MovieRepository(SFFContext context)
+        public MoviePropertyRepository(SFFContext context)
         {
             this._context = context;
         }
@@ -40,6 +40,7 @@ namespace SFF.Datasource.Repository
         {
             _context.Entry(movie).State =
                EntityState.Modified;
+
             _context.SaveChanges();
         }
 
@@ -51,6 +52,5 @@ namespace SFF.Datasource.Repository
             return results;
 
         }
-
     }
 }

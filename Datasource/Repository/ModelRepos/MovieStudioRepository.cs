@@ -37,10 +37,11 @@ namespace SFF.Datasource.Repository
             _context.SaveChanges();
         }
 
-        public void Update(MovieStudio movie)
+        public void Update(MovieStudio newMovieStudio)
         {
-            _context.Entry(movie).State =
+            _context.Entry(newMovieStudio).State =
                EntityState.Modified;
+            _context.Update(newMovieStudio);
             _context.SaveChanges();
         }
 

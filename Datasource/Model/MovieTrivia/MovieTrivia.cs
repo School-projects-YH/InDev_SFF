@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SFF.Datasource.Model
 { 
-    public class MovieTrivia
+    public class MovieTrivia : IEntity
     {
         public MovieStudio MovieStudio { get; set; }
         public Movie Movie { get; set; }
