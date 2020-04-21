@@ -10,9 +10,9 @@ namespace SFF.Datasource.Repository
 {
     class MovieRepository : IRepository<Movie>
     {
-        private readonly MovieContext _context;
+        private readonly SFFContext _context;
 
-        public MovieRepository(MovieContext context)
+        public MovieRepository(SFFContext context)
         {
             this._context = context;
         }

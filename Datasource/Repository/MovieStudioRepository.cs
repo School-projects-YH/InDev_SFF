@@ -11,9 +11,9 @@ namespace SFF.Datasource.Repository
 {
     public class MovieStudioRepository : IRepository<MovieStudio>
     {
-        readonly MovieStudioContext _context;
+        readonly SFFContext _context;
 
-        public MovieStudioRepository(MovieStudioContext context)
+        public MovieStudioRepository(SFFContext context)
         {
             _context = context;
         }

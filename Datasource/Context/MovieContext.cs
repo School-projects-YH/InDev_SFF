@@ -6,11 +6,16 @@ using SFF.Datasource.Model;
 
 namespace SFF.Datasource.Context
 {
-    class MovieContext : DbContext
+    public class SFFContext : DbContext
     {
-        public MovieContext(DbContextOptions<MovieContext> options) : base (options)
+        public SFFContext(DbContextOptions<SFFContext> options) : base (options)
         { }
 
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<MovieStudio> MovieStudios { get; set; }
+        public DbSet<MovieTrivia> MovieTrivias { get; set; }
+
+
+
     }
 }
