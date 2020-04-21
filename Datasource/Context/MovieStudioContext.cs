@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using SFF.Core.MovieStudios;
+using SFF.Datasource.Model;
 
 
-namespace SFF.Core.Context
+namespace SFF.Datasource.Context
 {
     public class MovieStudioContext : DbContext
     {
         public MovieStudioContext(DbContextOptions<MovieStudioContext> options) : base(options)
         { }
-        public DbSet<MovieStudio> movieStudios { get; set; }
+        public DbSet<MovieStudio> MovieStudios { get; set; }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SFF.Core;
 using Microsoft.EntityFrameworkCore;
-using SFF.Core.Context;
 using System.Linq;
+using SFF.Datasource.Model;
+using SFF.Datasource.Context;
 
-namespace SFF.Core.Model
+namespace SFF.Datasource.Repository
 {
     class MovieRepository : IRepository<Movie>
     {

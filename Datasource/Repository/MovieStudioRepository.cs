@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SFF.Core.MovieStudios;
 using Microsoft.EntityFrameworkCore;
-using SFF.Core.Context;
 using System.Linq;
+using SFF.Datasource.Model;
+using SFF.Datasource.Context;
 
-namespace SFF.Core.Model
+
+namespace SFF.Datasource.Repository
 {
     public class MovieStudioRepository : IRepository<MovieStudio>
     {
@@ -21,18 +22,18 @@ namespace SFF.Core.Model
         {
             get
             {
-                return _context.movieStudios;
+                return _context.MovieStudios;
             }
         }
         public void Add(MovieStudio movie)
         {
-            _context.movieStudios.Add(movie);
+            _context.MovieStudios.Add(movie);
             _context.SaveChanges();
         }
 
         public void Delete(MovieStudio movie)
         {
-            _context.movieStudios.Remove(movie);
+            _context.MovieStudios.Remove(movie);
             _context.SaveChanges();
         }
 
@@ -46,7 +47,7 @@ namespace SFF.Core.Model
         public MovieStudio FindById(int id)
         {
             var results =
-                (from m in _context.movieStudios where m.Id == id select m)
+                (from m in _context.MovieStudios where m.Id == id select m)
                 .FirstOrDefault();
             return results;
 

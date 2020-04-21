@@ -4,13 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using SFF.Core.Model;
+using SFF.Datasource.Model;
 
 namespace SFF.Core
 {
-    public class Movie : IEntity
+    public class Movie : SFF.Datasource.Model.Movie
     {
-        public MovieProperty MovieProperty { get; set; }
         public Movie(string Title, decimal Duration)
         {
             MovieProperty = new MovieProperty
@@ -22,7 +21,7 @@ namespace SFF.Core
                 NumberOfMaxSimultaneouslyRented = 10
             };
         }
-        public Movie(string Title, decimal Duration, int MaxSimultaneouslyRented) : this (Title, Duration)
+        public Movie(string Title, decimal Duration, int MaxSimultaneouslyRented) : this(Title, Duration)
         {
             MovieProperty.NumberOfMaxSimultaneouslyRented = MaxSimultaneouslyRented;
         }

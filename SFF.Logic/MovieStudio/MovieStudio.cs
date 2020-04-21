@@ -1,21 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using SFF.Core.Model;
-using SFF.Core;
+using SFF.Datasource.Model;
 
 namespace SFF.Core.MovieStudios 
 {
-    public class MovieStudio : IEntity
+    public class MovieStudio : SFF.Datasource.Model.MovieStudio
     {
-        public string Name { get; set; }
-        public string Adress { get; set; }
-        public string City { get; set; }
-
         private MovieStudio()
         {
 
         }
-
         public MovieStudio(string Name, string City)
         {
             this.Name = Name;

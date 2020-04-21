@@ -7,13 +7,8 @@ using SFF.Core;
 
 namespace SFF.Core.MovieTriviaNS
 {
-    public class MovieTrivia
+    public class MovieTrivia : SFF.Datasource.Model.MovieTrivia
     {
-        public MovieStudio MovieStudio { get; set; }
-        public Movie Movie { get; set; }
-        public string ReviewSummary { get; set; }
-        public int ReviewScore { get; set; }
-
         private MovieTrivia(MovieStudio movieStudio, Movie movie)
         {
             this.MovieStudio = movieStudio;

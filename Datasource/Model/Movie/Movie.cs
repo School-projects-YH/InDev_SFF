@@ -4,8 +4,8 @@ using System.Text;
 
 namespace SFF.Datasource.Model
 {
-    public class IEntity
+    public class Movie : IEntity
     {
-        public int Id { get; set; }
+        public MovieProperty MovieProperty { get; set; }
     }
 }

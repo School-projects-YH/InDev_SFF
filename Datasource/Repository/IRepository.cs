@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using SFF.Datasource.Model;
 
 
-namespace SFF.DataSource.Model
+namespace SFF.Datasource.Repository
 {
     public interface IRepository<T> where T : IEntity
     {

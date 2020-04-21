@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Xunit;
 using SFF.Core.MovieStudios;
 using AutoFixture;
-using SFF.Core.Model;
-using SFF.Core.Context;
+using SFF.Datasource.Context;
 using Moq;
+using SFF.Datasource.Repository;
 
 
 namespace SFF.Tests.MovieStudioTests

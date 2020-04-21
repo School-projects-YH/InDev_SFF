@@ -16,6 +16,11 @@
   <ItemGroup>
     <Folder Include="MovieStudio\" />
     <Folder Include="MovieTrivia\" />
+    <Folder Include="Logic\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Datasource\SFF.Datasource.csproj" />
   </ItemGroup>
 
 </Project>

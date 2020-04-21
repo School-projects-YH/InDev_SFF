@@ -6,6 +6,7 @@ using AutoFixture;
 using SFF.Core.MovieTriviaNS;
 using SFF.Core.MovieStudios;
 using SFF.Core;
+using SFF.Datasource.Model;
 
 namespace SFF.Tests.MovieTriviaTests
 {
@@ -17,8 +18,8 @@ namespace SFF.Tests.MovieTriviaTests
             // Arrange
             var fixture = new Fixture();
             var expectedSummary = fixture.Create<string>();
-            var expectedMovieStudio = fixture.Create<MovieStudio>();
-            var expectedMovie = fixture.Build<Movie>()
+            var expectedMovieStudio = fixture.Create<SFF.Core.MovieStudios.MovieStudio>();
+            var expectedMovie = fixture.Build<SFF.Core.Movie>()
                 .With(x => x.MovieProperty, fixture.Build<MovieProperty>()
                     .With(x => x.Duration, "100")
                     .Create())
@@ -26,7 +27,7 @@ namespace SFF.Tests.MovieTriviaTests
 
 
             // Act
-            MovieTrivia movieTrivia = new MovieTrivia(expectedMovieStudio, expectedMovie, expectedSummary);
+            SFF.Core.MovieTriviaNS.MovieTrivia movieTrivia = new SFF.Core.MovieTriviaNS.MovieTrivia(expectedMovieStudio, expectedMovie, expectedSummary);
 
             // Assert
             Assert.Equal(expectedMovieStudio, movieTrivia.MovieStudio);
@@ -38,8 +39,8 @@ namespace SFF.Tests.MovieTriviaTests
             // Arrange
             var fixture = new Fixture();
             var expectedScore = fixture.Create<int>();
-            var expectedMovieStudio = fixture.Create<MovieStudio>();
-            var expectedMovie = fixture.Build<Movie>()
+            var expectedMovieStudio = fixture.Create<SFF.Core.MovieStudios.MovieStudio>();
+            var expectedMovie = fixture.Build<SFF.Core.Movie>()
                 .With(x => x.MovieProperty, fixture.Build<MovieProperty>()
                     .With(x => x.Duration, "100")
                     .Create())
@@ -47,7 +48,7 @@ namespace SFF.Tests.MovieTriviaTests
 
 
             // Act
-            MovieTrivia movieTrivia = new MovieTrivia(expectedMovieStudio, expectedMovie, expectedScore);
+            SFF.Core.MovieTriviaNS.MovieTrivia movieTrivia = new SFF.Core.MovieTriviaNS.MovieTrivia(expectedMovieStudio, expectedMovie, expectedScore);
 
             // Assert
             Assert.Equal(expectedMovieStudio, movieTrivia.MovieStudio);
@@ -61,8 +62,8 @@ namespace SFF.Tests.MovieTriviaTests
             var fixture = new Fixture();
             var expectedScore = fixture.Create<int>();
             var expectedSummary = fixture.Create<string>();
-            var expectedMovieStudio = fixture.Create<MovieStudio>();
-            var expectedMovie = fixture.Build<Movie>()
+            var expectedMovieStudio = fixture.Create<SFF.Core.MovieStudios.MovieStudio>();
+            var expectedMovie = fixture.Build<SFF.Core.Movie>()
                 .With(x => x.MovieProperty, fixture.Build<MovieProperty>()
                     .With(x => x.Duration, "100")
                     .Create())
@@ -70,7 +71,7 @@ namespace SFF.Tests.MovieTriviaTests
 
 
             // Act
-            MovieTrivia movieTrivia = new MovieTrivia(expectedMovieStudio, expectedMovie, expectedScore, expectedSummary);
+            SFF.Core.MovieTriviaNS.MovieTrivia movieTrivia = new SFF.Core.MovieTriviaNS.MovieTrivia(expectedMovieStudio, expectedMovie, expectedScore, expectedSummary);
 
             // Assert
             Assert.Equal(expectedMovieStudio, movieTrivia.MovieStudio);

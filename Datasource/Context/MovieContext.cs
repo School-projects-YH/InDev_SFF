@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 using Microsoft.EntityFrameworkCore;
+using SFF.Datasource.Model;
 
-namespace SFF.Models
+namespace SFF.Datasource.Context
 {
-    public class MovieContext : DbContext
+    class MovieContext : DbContext
     {
         public MovieContext(DbContextOptions<MovieContext> options) : base (options)
-        {
-
-        }
+        { }
 
         public DbSet<Movie> Movies { get; set; }
     }
