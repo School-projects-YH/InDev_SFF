@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SFF.Datasource.Model
 {
@@ -12,8 +10,8 @@ namespace SFF.Datasource.Model
 
         public MovieStudio()
         {
-
         }
+
         public MovieStudio(string Name, string City)
         {
             this.Name = Name;
@@ -25,7 +23,6 @@ namespace SFF.Datasource.Model
             this.Adress = Adress;
         }
 
-        public IEnumerable<Movie> CurrentlyRentedMovies { get; }
-       
+        public IEnumerable<Movie> CurrentlyRentedMovies { get; set; }
     }
 }

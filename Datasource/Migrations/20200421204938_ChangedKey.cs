@@ -6,7 +6,6 @@ namespace SFF.Datasource.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
             migrationBuilder.AddForeignKey(
                 name: "FK_MovieTrivias_Movies_MovieId",
                 table: "MovieTrivias",

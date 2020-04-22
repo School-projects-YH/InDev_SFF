@@ -38,7 +38,6 @@ namespace SFF.Datasource.Migrations
                     table.PrimaryKey("PK_MovieStudios", x => x.Id);
                 });
 
-            
             migrationBuilder.CreateTable(
                 name: "MovieTrivias",
                 columns: table => new

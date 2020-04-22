@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using SFF.Datasource.Repository;
+﻿using Microsoft.AspNetCore.Mvc;
 using SFF.Datasource.Model;
+using SFF.Datasource.Repository;
+using System.Collections.Generic;
 
 namespace SFF.API.Controllers
 {
@@ -15,6 +15,7 @@ namespace SFF.API.Controllers
         {
             _repoWrapper = repoWrapper;
         }
+
         // GET: api/MovieStudio
         [HttpGet]
         public IEnumerable<MovieStudio> GetAll()

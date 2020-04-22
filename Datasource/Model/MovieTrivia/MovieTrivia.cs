@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SFF.Datasource.Model
-{ 
+﻿namespace SFF.Datasource.Model
+{
     public class MovieTrivia : IEntity
     {
         public MovieStudio MovieStudio { get; set; }

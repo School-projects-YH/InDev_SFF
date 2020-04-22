@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using SFF.Datasource.Model;
+﻿using Microsoft.EntityFrameworkCore;
 using SFF.Datasource.Context;
+using SFF.Datasource.Model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SFF.Datasource.Repository
 {
@@ -24,6 +22,7 @@ namespace SFF.Datasource.Repository
                 return _context.Movies;
             }
         }
+
         public void Add(Movie movie)
         {
             _context.Movies.Add(movie);
@@ -46,11 +45,10 @@ namespace SFF.Datasource.Repository
 
         public Movie FindById(int id)
         {
-            var results = 
+            var results =
                 (from m in _context.Movies where m.Id == id select m)
                 .FirstOrDefault();
             return results;
-
         }
     }
 }

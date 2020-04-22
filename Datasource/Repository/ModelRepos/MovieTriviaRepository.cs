@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SFF.Datasource.Model;
+﻿using Microsoft.EntityFrameworkCore;
 using SFF.Datasource.Context;
+using SFF.Datasource.Model;
+using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
-
 
 namespace SFF.Datasource.Repository
 {
     public class MovieTriviaRepository : IRepository<MovieTrivia>
     {
-        readonly SFFContext _context;
+        private readonly SFFContext _context;
 
         public MovieTriviaRepository(SFFContext context)
         {
@@ -25,6 +22,7 @@ namespace SFF.Datasource.Repository
                 return _context.MovieTrivias;
             }
         }
+
         public void Add(MovieTrivia movieTrivia)
         {
             _context.MovieTrivias.Add(movieTrivia);
@@ -52,7 +50,6 @@ namespace SFF.Datasource.Repository
                 (from m in _context.MovieTrivias where m.Id == id select m)
                 .FirstOrDefault();
             return results;
-
         }
     }
 }

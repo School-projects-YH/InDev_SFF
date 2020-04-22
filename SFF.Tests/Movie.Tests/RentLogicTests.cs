@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
-using AutoFixture;
+﻿using AutoFixture;
 using SFF.Datasource.Model;
+using Xunit;
 
 namespace SFF.Tests.MovieTests
 {
     public class RentLogicTests
     {
-
         [Fact]
         public void Does_a_max_rented_capicity_exist()
         {
@@ -25,6 +21,7 @@ namespace SFF.Tests.MovieTests
             // Assert
             Assert.True(movie.NumberOfMaxSimultaneouslyRented > 0);
         }
+
         [Fact]
         public void Can_you_change_the_number_of_times_a_movie_can_be_rented()
         {
@@ -42,6 +39,7 @@ namespace SFF.Tests.MovieTests
             // Assert
             Assert.Equal(movie.NumberOfMaxSimultaneouslyRented, exectedNumberOfTimesYouCanRent);
         }
+
         [Fact]
         public void Is_it_possible_to_rent_more_than_allowed()
         {
@@ -52,15 +50,15 @@ namespace SFF.Tests.MovieTests
             var movie = new Movie(title, duration);
 
             var numberOfTimesYouCanRent = 10;
-            
+
             // Act
             movie.NumberOfMaxSimultaneouslyRented = numberOfTimesYouCanRent;
 
             // Assert
             // Test if you can rent a movie over the set limit
             Assert.Throws<ExceedingMaxRentCapReachedException>(() => movie.RentMovie(numberOfTimesYouCanRent + 1));
-
         }
+
         [Fact]
         public void Is_it_possible_to_mark_a_movie_as_rented()
         {
@@ -75,6 +73,5 @@ namespace SFF.Tests.MovieTests
             // Assert
             Assert.True(movie.IsRented);
         }
-
     }
 }

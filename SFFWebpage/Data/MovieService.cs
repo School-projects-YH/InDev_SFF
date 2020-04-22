@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 using SFF.Datasource.Model;
+using System.Collections.Generic;
 using System.Net.Http;
-using System.Net;
-using System.IO;
-using Newtonsoft.Json;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SFFWebpage.Data
 {
@@ -29,12 +25,14 @@ namespace SFFWebpage.Data
             {
                 var json = await client.GetStringAsync("https://localhost:5001/api/Movie/" + id);
                 var movie = JsonConvert.DeserializeObject<Movie>(json);
-                movie.NumberOfCurrentlyRented += 1;
+                if (movie.NumberOfCurrentlyRented < movie.NumberOfMaxSimultaneouslyRented)
+                {
+                    movie.NumberOfCurrentlyRented += 1;
+                }
                 json = JsonConvert.SerializeObject(movie);
                 var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
                 await client.PutAsync("https://localhost:5001/api/Movie/" + id, httpContent);
-                
             }
         }
     }

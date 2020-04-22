@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SFF.Datasource.Context;
+﻿using SFF.Datasource.Context;
 
 namespace SFF.Datasource.Repository
 {
@@ -27,6 +24,7 @@ namespace SFF.Datasource.Repository
                 return _movieStudio ?? new MovieStudioRepository(_context);
             }
         }
+
         public MovieTriviaRepository MovieTrivia
         {
             get
@@ -44,10 +42,5 @@ namespace SFF.Datasource.Repository
         {
             _context.SaveChanges();
         }
-            
-       
-
-
-
     }
 }

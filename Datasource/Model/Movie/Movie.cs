@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace SFF.Datasource.Model
 {
@@ -12,8 +9,10 @@ namespace SFF.Datasource.Model
         public int NumberOfCurrentlyRented { get; set; }
         public string Title { get; set; }
         public int Duration { get; set; }
+
         public Movie()
         { }
+
         public Movie(string Title, int Duration)
         {
             this.Title = Title;
@@ -22,11 +21,13 @@ namespace SFF.Datasource.Model
             // Standard value 10
             NumberOfMaxSimultaneouslyRented = 10;
         }
+
         [JsonConstructor]
         public Movie(string Title, int Duration, int MaxSimultaneouslyRented) : this(Title, Duration)
         {
             NumberOfMaxSimultaneouslyRented = MaxSimultaneouslyRented;
         }
+
         public void RentMovie(int numberOfMovies)
         {
             if (IsMaxRented(numberOfMovies))
@@ -39,6 +40,7 @@ namespace SFF.Datasource.Model
                 throw new ExceedingMaxRentCapReachedException(exceptionString);
             }
         }
+
         private bool IsMaxRented(int numberOfRentedMovies) => NumberOfCurrentlyRented + numberOfRentedMovies <= NumberOfMaxSimultaneouslyRented;
     }
 }

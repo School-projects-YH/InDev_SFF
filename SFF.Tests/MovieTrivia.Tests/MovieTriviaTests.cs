@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
-using AutoFixture;
-using SFF.Core.MovieTriviaNS;
-using SFF.Core.MovieStudios;
-using SFF.Core;
+﻿using AutoFixture;
 using SFF.Datasource.Model;
+using Xunit;
 
 namespace SFF.Tests.MovieTriviaTests
 {
@@ -28,6 +22,7 @@ namespace SFF.Tests.MovieTriviaTests
             Assert.Equal(expectedMovieStudio, movieTrivia.MovieStudio);
             Assert.Equal(expectedSummary, movieTrivia.ReviewSummary);
         }
+
         [Fact]
         public void Create_a_movie_review_with_score()
         {
@@ -36,7 +31,6 @@ namespace SFF.Tests.MovieTriviaTests
             var expectedScore = fixture.Create<int>();
             var expectedMovieStudio = fixture.Create<SFF.Core.MovieStudios.MovieStudio>();
             var expectedMovie = fixture.Build<Movie>().Create();
-
 
             // Act
             SFF.Core.MovieTriviaNS.MovieTrivia movieTrivia = new SFF.Core.MovieTriviaNS.MovieTrivia(expectedMovieStudio, expectedMovie, expectedScore);
@@ -55,7 +49,6 @@ namespace SFF.Tests.MovieTriviaTests
             var expectedSummary = fixture.Create<string>();
             var expectedMovieStudio = fixture.Create<SFF.Core.MovieStudios.MovieStudio>();
             var expectedMovie = fixture.Build<Movie>().Create();
-
 
             // Act
             SFF.Core.MovieTriviaNS.MovieTrivia movieTrivia = new SFF.Core.MovieTriviaNS.MovieTrivia(expectedMovieStudio, expectedMovie, expectedScore, expectedSummary);

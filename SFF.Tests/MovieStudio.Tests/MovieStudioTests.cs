@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Xunit;
-using AutoFixture;
-using SFF.Datasource.Model;
+﻿using AutoFixture;
 using Moq;
+using SFF.Datasource.Model;
 using SFF.Datasource.Repository;
-
+using Xunit;
 
 namespace SFF.Tests.MovieStudioTests
 {
@@ -25,8 +22,8 @@ namespace SFF.Tests.MovieStudioTests
             // Assert
             Assert.Equal(expectedName, movieStudio.Name);
             Assert.Equal(expectedCity, movieStudio.City);
-
         }
+
         [Fact]
         public void Create_a_Movie_Studio_with_name_city_and_adress()
         {
@@ -49,7 +46,7 @@ namespace SFF.Tests.MovieStudioTests
         {
             // Arrange
             var fixture = new Fixture();
-            
+
             var mockMovieStudioRepository = new Mock<IRepository<MovieStudio>>();
             var expectedMovieStudio = fixture.Create<MovieStudio>();
             // Act
@@ -72,7 +69,6 @@ namespace SFF.Tests.MovieStudioTests
 
             MovieStudio movieStudio = new MovieStudio(oldName, oldCity)
             {
-
                 // Act
                 Name = expectedName,
                 City = expectedCity

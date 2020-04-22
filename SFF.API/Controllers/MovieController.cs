@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using SFF.Datasource.Repository;
+﻿using Microsoft.AspNetCore.Mvc;
 using SFF.Datasource.Model;
-using System.Net.Http;
-using System.Net.Http.Formatting;
+using SFF.Datasource.Repository;
+using System.Collections.Generic;
 
 namespace SFF.API.Controllers
 {
@@ -17,12 +15,15 @@ namespace SFF.API.Controllers
         {
             _repoWrapper = repoWrapper;
         }
+
         // GET: api/Movie
         [HttpGet]
         public IEnumerable<Movie> GetAll()
         {
             return _repoWrapper.Movie.List;
         }
+
+        // GET: api/Movie
 
         // GET: api/Movie/5
         [HttpGet("{id}")]
@@ -37,6 +38,8 @@ namespace SFF.API.Controllers
         {
             _repoWrapper.Movie.Add(movie);
         }
+
+        // POST: api/Movie
 
         // PUT: api/Movie/5
         [HttpPut("{id}")]

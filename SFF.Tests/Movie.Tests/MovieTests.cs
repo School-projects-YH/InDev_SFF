@@ -1,8 +1,5 @@
-﻿using System;
+﻿using SFF.Datasource.Model;
 using Xunit;
-using SFF.Core;
-using AutoFixture;
-using SFF.Datasource.Model;
 
 namespace SFF.Tests.MovieTests
 {

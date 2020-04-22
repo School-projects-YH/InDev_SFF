@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using SFF.Datasource.Model;
+﻿using Microsoft.EntityFrameworkCore;
 using SFF.Datasource.Context;
-
+using SFF.Datasource.Model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SFF.Datasource.Repository
 {
     public class MovieStudioRepository : IRepository<MovieStudio>
     {
-        readonly SFFContext _context;
+        private readonly SFFContext _context;
 
         public MovieStudioRepository(SFFContext context)
         {
@@ -25,6 +22,7 @@ namespace SFF.Datasource.Repository
                 return _context.MovieStudios;
             }
         }
+
         public void Add(MovieStudio movie)
         {
             _context.MovieStudios.Add(movie);
@@ -51,8 +49,6 @@ namespace SFF.Datasource.Repository
                 (from m in _context.MovieStudios where m.Id == id select m)
                 .FirstOrDefault();
             return results;
-
         }
-
     }
 }

@@ -1,5 +1,5 @@
 ﻿@page "/fetchdata"
-@page "/fetchdata/{Id}"
+@page "/fetchdata/{Id:int}"
 
 @using SFFWebpage.Data
 @using SFF.Datasource.Model
@@ -16,29 +16,29 @@ else
 {
     <div class="table">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Duration (min)</th>
-                <th>Currently Rented</th>
-                <th>Max Rented</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var movie in movies)
-            {
-                Id = movie.Id;
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@movie.Title</td>
-                    <td>@movie.Duration</td>
-                    <td>@movie.NumberOfCurrentlyRented</td>
-                    <td>@movie.NumberOfMaxSimultaneouslyRented</td>
-                    <td><button class="btn btn-primary" @onclick="RentMovie">Rent</button></td>
+                    <th>Title</th>
+                    <th>Duration (min)</th>
+                    <th>Currently Rented</th>
+                    <th>Max Rented</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var movie in movies)
+                {
+                    Id = movie.Id;
+                    <tr>
+                        <td>@movie.Title</td>
+                        <td>@movie.Duration</td>
+                        <td>@movie.NumberOfCurrentlyRented</td>
+                        <td>@movie.NumberOfMaxSimultaneouslyRented</td>
+                        <td><a href="/fetchdata/@movie.Id" class="btn btn-success">Rent</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 }
 
@@ -63,6 +63,11 @@ else
     {
         // If we were already polling for a different order, stop doing so
         pollingCancellationToken?.Cancel();
+        if (Id != 0)
+        {
+
+            movieService.RentMovieAsync(Id);
+        }
 
         // Start a new poll loop
         PollForUpdates();
@@ -84,7 +89,6 @@ else
             }
 
             StateHasChanged();
-
 
             await Task.Delay(200);
         }
